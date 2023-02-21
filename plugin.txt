@@ -1,0 +1,8 @@
+VARIABLE dual_sense_target_name DUALSENSE
+VARIABLE dual_sense_hostname host.docker.internal
+VARIABLE dual_sense_port 2951
+
+TARGET DUALSENSE <%= dual_sense_target_name %>
+
+INTERFACE DUAL_SENSE_INT tcpip_client_interface.rb <%= dual_sense_hostname %> <%= dual_sense_port %> <%= dual_sense_port %> 10.0 nil FIXED 1
+  MAP_TARGET <%= dual_sense_target_name %>
