@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
     time = Time.now.strftime("%Y%m%d%H%M%S")
     s.version = '0.0.0' + ".#{time}"
   end
-  s.files = Dir.glob("{targets,lib,tools,microservices,public}/**/*") + %w(Rakefile README.md LICENSE.txt plugin.txt)
+  s.files = Dir.glob("{targets,lib,tools,microservices,public}/**/*") + %w(Rakefile README.md LICENSE.md plugin.txt requirements.txt)
   s.metadata = {
     "source_code_uri" => "https://github.com/OpenC3/openc3-cosmos-dualsense",
     "openc3_store_title" => "PS5 DualSense Controller",
@@ -34,6 +34,6 @@ Gem::Specification.new do |s|
     "openc3_store_keywords" => "ps5, dualsense, controller, gamepad, hid, target",
     "openc3_store_image" => "public/store_img.jpg",
     "openc3_store_access_type" => "public",
-    "openc3_cosmos_minimum_version" => "6.0.0"
+    "openc3_cosmos_minimum_version" => "7.4.0"
   }
 end

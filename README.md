@@ -1,10 +1,7 @@
 # OpenC3 COSMOS DualSense Plugin
 
-This plugin provides a target and interface to connect to a Sony PS5 DualSense Controller through a bridge
-It currently uses a limited driver to the api called myhidapi, that works well on MacOs but may not work on
-other OS. Let us know!
-
-This plugin is meant to be used with the openc3-cosmos-bridge-dualsense bridge
+This plugin provides a target and interface to connect to a Sony PS5 DualSense Controller
+Uses COSMOS 7.4+ Bridges
 
 ## Upload plugin
 

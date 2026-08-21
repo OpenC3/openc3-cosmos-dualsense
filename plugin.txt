@@ -1,8 +1,15 @@
 VARIABLE dual_sense_target_name DUALSENSE
-VARIABLE dual_sense_hostname host.docker.internal
-VARIABLE dual_sense_port 2951
+VARIABLE dual_sense_version 5
+  VARIABLE_STATE 5 5
+  VARIABLE_STATE 4 4
 
 TARGET DUALSENSE <%= dual_sense_target_name %>
 
-INTERFACE DUAL_SENSE_INT tcpip_client_interface.rb <%= dual_sense_hostname %> <%= dual_sense_port %> <%= dual_sense_port %> 10.0 nil FIXED 1
+<% if dual_sense_version == "4" %>
+INTERFACE DUAL_SENSE_INT hid_api_interface.py 0x054C 0x05C4
+<% else %>
+INTERFACE DUAL_SENSE_INT hid_api_interface.py 0x054C 0x0CE6
+<% end %>
+  PROTOCOL READ_WRITE openc3/interfaces/protocols/fixed_protocol.py 10
   MAP_TARGET <%= dual_sense_target_name %>
+  BRIDGE DEFAULT
